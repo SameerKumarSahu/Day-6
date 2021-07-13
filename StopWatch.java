@@ -1,28 +1,23 @@
+package stopwatch;
+
+
 import java.util.Scanner;
-public class StopWatch
-{
-        public static void main(String[] args)
-        {
-                Scanner scan =new Scanner(System.in);
-                System.out.println("Press any value to start :- ");
-                double startTimer = scan.nextDouble();
 
-                System.out.println("Press any value to stop :- ");
-                double stopTimer = scan.nextDouble();
+public class StopWatch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-                double elapsed=stopTimer-startTimer;
-                double a =elapsed-0.4;
-                if (elapsed<0)
-                {
-                        double Elapsed = 24 + elapsed;
-                        System.out.println("Time elaspsed is :- " + Elapsed);
-                }
-                else
-                {
-                        System.out.println("Time elaspsed is :- " + a);
+        System.out.println("Enter 1 to start the clock");
 
-                }
-                        //System.out.println("Time elaspsed is :- " + elapsed);
+        double start = sc.nextDouble();
+        start=System.currentTimeMillis();
 
-        }
+        System.out.println("Enter 0 to stop the clock");
+        double stop= sc.nextDouble();
+        stop=System.currentTimeMillis();
+
+        double elapsed_time = (stop - start)/1000;
+        System.out.println("Elapsed time is " + elapsed_time+ "seconds");
+
+    }
 }
